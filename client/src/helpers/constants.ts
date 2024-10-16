@@ -138,6 +138,8 @@ export const MENU_URLS = {
     root: '/',
     logs: '/logs',
     guide: '/guide',
+    client: '/client',
+    clientId: '/client/:clientId',
 };
 
 export const SETTINGS_URLS = {

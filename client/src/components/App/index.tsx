@@ -36,6 +36,7 @@ import Encryption from '../../containers/Encryption';
 
 import Dhcp from '../Settings/Dhcp';
 import Clients from '../../containers/Clients';
+import Client from '../Settings/Clients/Client';
 import DnsBlocklist from '../../containers/DnsBlocklist';
 import DnsAllowlist from '../../containers/DnsAllowlist';
 import DnsRewrites from '../../containers/DnsRewrites';
@@ -60,6 +61,15 @@ const ROUTES = [
     {
         path: MENU_URLS.guide,
         component: SetupGuide,
+    },
+    {
+        path: MENU_URLS.clientId,
+        component: Client,
+    },
+    {
+        path: MENU_URLS.client,
+        exact: true,
+        component: Client,
     },
     {
         path: SETTINGS_URLS.settings,

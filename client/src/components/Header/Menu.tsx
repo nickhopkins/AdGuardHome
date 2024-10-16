@@ -17,22 +17,29 @@ const MENU_ITEMS = [
         text: 'dashboard',
         order: 0,
     },
+    {
+        route: MENU_URLS.client,
+        exact: true,
+        icon: 'detailed_list',
+        text: 'Client',
+        order: 1,
+    },
 
-    // Settings dropdown should have visual order 1
+    // Settings dropdown should have visual order 2
 
-    // Filters dropdown should have visual order 2
+    // Filters dropdown should have visual order 3
 
     {
         route: MENU_URLS.logs,
         icon: 'log',
         text: 'query_log',
-        order: 3,
+        order: 4,
     },
     {
         route: MENU_URLS.guide,
         icon: 'setup',
         text: 'setup_guide',
-        order: 4,
+        order: 5,
     },
 ];
 
@@ -115,7 +122,7 @@ class Menu extends Component<MenuProps> {
             onClick={this.closeMenu}>
             {icon && (
                 <svg className="nav-icon">
-                    <use xlinkHref={`#${icon}`} />
+                    <use href={`#${icon}`} />
                 </svg>
             )}
 
@@ -158,9 +165,9 @@ class Menu extends Component<MenuProps> {
                             </li>
                         ))}
 
-                        <li className="nav-item order-1">
+                        <li className="nav-item order-2">
                             {this.getDropdown({
-                                order: 1,
+                                order: 2,
                                 label: 'settings',
                                 icon: 'settings',
                                 URLS: SETTINGS_URLS,
@@ -168,9 +175,9 @@ class Menu extends Component<MenuProps> {
                             })}
                         </li>
 
-                        <li className="nav-item order-2">
+                        <li className="nav-item order-3">
                             {this.getDropdown({
-                                order: 2,
+                                order: 3,
                                 label: 'filters',
                                 icon: 'filters',
                                 URLS: FILTERS_URLS,
